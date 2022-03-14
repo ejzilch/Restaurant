@@ -1,0 +1,31 @@
+h4 {
+	color: blue;
+	display: inline;
+}
+
+table, th, td {
+	font-family: monospace;
+	border: 1px solid #CCCCFF;
+}
+
+th, td {
+	padding: 5px;
+	text-align: center;
+}
+
+div.container.get_member_res_seat {
+	text-align: center;
+	position: relative;
+}
+
+button.btn, input.btn {
+	padding: 5px 5px;
+	border: 0 none;
+	cursor: pointer;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.swal-footer {
+	text-align: center;
+}
