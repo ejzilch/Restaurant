@@ -87,7 +87,6 @@ input, select {
 							<input type="hidden" name="mem_no" value="${memVO2.mem_no}"> <input type="hidden" name="emp_no" value="${empVO2.emp_no}">
 						</label>
 <!-- 						<button id="orderSearch" name="action" value="order_search" class="btn btn-warning" onclick='return false;'>查詢</button> -->
-				
 <!-- 						<label class="labelTwo">  -->
 <!-- 							用餐人數:  -->
 <!-- 							<select id="people" name="people" ></select> -->

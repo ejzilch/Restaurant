@@ -212,7 +212,6 @@ $(document).ready(function(e) {
 	$(document).on('click', '#order_meal', function() {
 		$('[data-toggle="popover"]').popover('hide');
 	});
-
 });
 
 // 開局載入
@@ -222,7 +221,6 @@ $(window).load(function init() {
 		return false;
 	}
 	lock_time_peri_no = false; // 3.進來後，立馬把鎖鎖住
-
 	lock_time_peri_no = true;// 如果業務執行失敗，修改鎖狀態
 	return false;
 });

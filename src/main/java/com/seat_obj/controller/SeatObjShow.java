@@ -17,7 +17,6 @@ import com.seat_obj.model.SeatObjVO;
 public class SeatObjShow extends HttpServlet implements Runnable {
 
 	private static final long serialVersionUID = 1L;
-
 	HttpServletRequest req;
 	HttpServletResponse res;
 	String seat_obj_no;
@@ -53,7 +52,7 @@ public class SeatObjShow extends HttpServlet implements Runnable {
 				} else {
 					// 將bytes位元用ByteArrayInputStream輸入
 					ByteArrayInputStream bais = new ByteArrayInputStream(seatObjVO.getSeat_obj());
-
+					
 					// 設定緩衝
 					byte[] buffer = new byte[4 * 1024];
 					// 輸出，當無字時，read()返回-1
