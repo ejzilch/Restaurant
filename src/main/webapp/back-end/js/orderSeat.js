@@ -161,7 +161,6 @@ $(document).ready(function(e) {
 	});
 
 	$(document).on('click', '#clear_window', function() {
-		console.log("clear_window");
 		$('[data-toggle="popover"]').popover('hide');
 	});
 
