@@ -69,7 +69,6 @@ public class SeatObjShow extends HttpServlet implements Runnable {
 			// 輸入完畢，清空緩衝
 			if (sos != null) {
 				try {
-//					sos.flush();
 					sos.close();
 				} catch (IOException e) {
 					e.printStackTrace();
