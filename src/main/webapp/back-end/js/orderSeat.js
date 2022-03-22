@@ -221,7 +221,7 @@ $(window).load(function init(e) {
 });
 
 function getSeatForPopover(e, isChecked) {
-	var lock_popover = true;
+	e.stopImmediatePropagation();
 	$('[data-toggle="popover"]').popover({
 		trigger: 'click',
 		delay: { "show": 100, "hide": 100 },
@@ -491,7 +491,6 @@ $(window).on('click', function(e) {
 	var isChecked = $("input:checked");
 	if (popoverObj.size() > 0) {
 		$('button[aria-describedby^="popover"]').popover("hide");
-		//		getResSeat(e);
 	}
 	chooseGetDetail(null, isChecked);
 });

@@ -36,9 +36,9 @@ public class SeatObjDAO implements SeatObjDAO_interface {
 			pstmt = con.prepareStatement(INSERT_STMT);
 
 			pstmt.setBytes(1, seatObjVO.getSeat_obj());
-			pstmt.setInt(2, new Integer(seatObjVO.getSeat_obj_sts()));
-			pstmt.setInt(3, new Integer(seatObjVO.getSeat_people()));
-			pstmt.setInt(4, new Integer(seatObjVO.getSeat_use()));
+			pstmt.setInt(2, Integer.valueOf(seatObjVO.getSeat_obj_sts()));
+			pstmt.setInt(3, Integer.valueOf(seatObjVO.getSeat_people()));
+			pstmt.setInt(4, Integer.valueOf(seatObjVO.getSeat_use()));
 			
 			pstmt.executeUpdate();
 
@@ -77,9 +77,9 @@ public class SeatObjDAO implements SeatObjDAO_interface {
 			} else {
 				pstmt.setBytes(1, null);
 			}
-			pstmt.setInt(2, new Integer(seatObjVO.getSeat_obj_sts()));
-			pstmt.setInt(3, new Integer(seatObjVO.getSeat_people()));
-			pstmt.setInt(4, new Integer(seatObjVO.getSeat_use()));
+			pstmt.setInt(2, Integer.valueOf(seatObjVO.getSeat_obj_sts()));
+			pstmt.setInt(3, Integer.valueOf(seatObjVO.getSeat_people()));
+			pstmt.setInt(4, Integer.valueOf(seatObjVO.getSeat_use()));
 			pstmt.setString(5, seatObjVO.getSeat_obj_no());
 
 			pstmt.executeUpdate();
@@ -128,9 +128,9 @@ public class SeatObjDAO implements SeatObjDAO_interface {
 				if (rs.getBytes("SEAT_OBJ") != null) {
 					seatObjVO.setSeat_obj(rs.getBytes("SEAT_OBJ"));
 				}
-				seatObjVO.setSeat_obj_sts(new Integer(rs.getInt("SEAT_OBJ_STS")));
-				seatObjVO.setSeat_people(new Integer(rs.getInt("SEAT_PEOPLE")));
-				seatObjVO.setSeat_use(new Integer(rs.getInt("SEAT_USE")));
+				seatObjVO.setSeat_obj_sts(Integer.valueOf(rs.getInt("SEAT_OBJ_STS")));
+				seatObjVO.setSeat_people(Integer.valueOf(rs.getInt("SEAT_PEOPLE")));
+				seatObjVO.setSeat_use(Integer.valueOf(rs.getInt("SEAT_USE")));
 			}
 		} // Handle any SQL errors
 		catch (SQLException se) {
@@ -186,9 +186,9 @@ public class SeatObjDAO implements SeatObjDAO_interface {
 					if (rs.getBytes("SEAT_OBJ") != null) {
 						seatObjVO.setSeat_obj(rs.getBytes("SEAT_OBJ"));
 					}
-					seatObjVO.setSeat_obj_sts(new Integer(rs.getInt("SEAT_OBJ_STS")));
-					seatObjVO.setSeat_people(new Integer(rs.getInt("SEAT_PEOPLE")));
-					seatObjVO.setSeat_use(new Integer(rs.getInt("SEAT_USE")));
+					seatObjVO.setSeat_obj_sts(Integer.valueOf(rs.getInt("SEAT_OBJ_STS")));
+					seatObjVO.setSeat_people(Integer.valueOf(rs.getInt("SEAT_PEOPLE")));
+					seatObjVO.setSeat_use(Integer.valueOf(rs.getInt("SEAT_USE")));
 					
 					list.add(seatObjVO); // Store the row in the list
 				}

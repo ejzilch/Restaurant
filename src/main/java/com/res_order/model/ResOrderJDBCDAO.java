@@ -36,10 +36,10 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 			pstmt.setString(2, resOrderVO.getMem_no());
 			pstmt.setString(3, resOrderVO.getEmp_no());
 			pstmt.setDate(4, resOrderVO.getRes_date());
-			pstmt.setInt(5, new Integer(resOrderVO.getPeople()));
+			pstmt.setInt(5, Integer.valueOf(resOrderVO.getPeople()));
 			pstmt.setString(6, resOrderVO.getTime_peri_no());
-			pstmt.setInt(7, new Integer(resOrderVO.getInfo_sts()));
-			pstmt.setInt(8, new Integer(resOrderVO.getSeat_sts()));
+			pstmt.setInt(7, Integer.valueOf(resOrderVO.getInfo_sts()));
+			pstmt.setInt(8, Integer.valueOf(resOrderVO.getSeat_sts()));
 
 			pstmt.executeUpdate();
 
@@ -85,10 +85,10 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 			pstmt.setString(2, resOrderVO.getMem_no());
 			pstmt.setString(3, resOrderVO.getEmp_no());
 			pstmt.setDate(4, resOrderVO.getRes_date());
-			pstmt.setInt(5, new Integer(resOrderVO.getPeople()));
+			pstmt.setInt(5, Integer.valueOf(resOrderVO.getPeople()));
 			pstmt.setString(6, resOrderVO.getTime_peri_no());
-			pstmt.setInt(7, new Integer(resOrderVO.getInfo_sts()));
-			pstmt.setInt(8, new Integer(resOrderVO.getSeat_sts()));
+			pstmt.setInt(7, Integer.valueOf(resOrderVO.getInfo_sts()));
+			pstmt.setInt(8, Integer.valueOf(resOrderVO.getSeat_sts()));
 			pstmt.setString(9, resOrderVO.getRes_no());
 
 			pstmt.executeUpdate();
@@ -148,8 +148,8 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 			}
 
 			System.out.println("FindByPrimaryKey success");
@@ -215,8 +215,8 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 			}
 
 			System.out.println("FindByPrimaryKey success");
@@ -273,7 +273,7 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-//				if (new Integer(rs.getInt("SEAT_ISDEL")) == 0) {
+//				if (Integer.valueOf(rs.getInt("SEAT_ISDEL")) == 0) {
 				resOrderVO = new ResOrderVO();
 
 				resOrderVO.setRes_no(rs.getString("RES_NO"));
@@ -284,8 +284,8 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 
 				list.add(resOrderVO); // Store the row in the list
 //				}
@@ -349,7 +349,7 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-//				if (new Integer(rs.getInt("SEAT_ISDEL")) == 0) {
+//				if (Integer.valueOf(rs.getInt("SEAT_ISDEL")) == 0) {
 				resOrderVO = new ResOrderVO();
 
 				resOrderVO.setRes_no(rs.getString("RES_NO"));
@@ -360,8 +360,8 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(java.sql.Date.valueOf(res_date));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(time_peri_no);
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 
 				list.add(resOrderVO); // Store the row in the list
 //				}
@@ -420,7 +420,7 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-//				if (new Integer(rs.getInt("SEAT_ISDEL")) == 0) {
+//				if (Integer.valueOf(rs.getInt("SEAT_ISDEL")) == 0) {
 				resOrderVO = new ResOrderVO();
 
 				resOrderVO.setRes_no(rs.getString("RES_NO"));
@@ -431,8 +431,8 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 
 				list.add(resOrderVO); // Store the row in the list
 //				}
@@ -500,8 +500,8 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 				list.add(resOrderVO);
 			}
 			System.out.println("Get By Res_Date success");
@@ -546,10 +546,10 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 //		resOrderVO.setMem_no("MEM0007");
 //		resOrderVO.setEmp_no("EMP0001");
 //		resOrderVO.setRes_date(java.sql.Date.valueOf("2020-10-05"));
-//		resOrderVO.setPeople(new Integer(6));
+//		resOrderVO.setPeople(Integer.valueOf(6));
 //		resOrderVO.setTime_peri_no("TP0001");
-//		resOrderVO.setInfo_sts(new Integer(0));
-//		resOrderVO.setSeat_sts(new Integer(0));
+//		resOrderVO.setInfo_sts(Integer.valueOf(0));
+//		resOrderVO.setSeat_sts(Integer.valueOf(0));
 //		dao.insert(resOrderVO);
 //
 //		// update
@@ -559,10 +559,10 @@ public class ResOrderJDBCDAO implements ResOrderDAO_interface {
 //		resOrderVO1.setMem_no("MEM0007");
 //		resOrderVO1.setEmp_no("EMP0001");
 //		resOrderVO1.setRes_date(java.sql.Date.valueOf("2020-10-05"));
-//		resOrderVO1.setPeople(new Integer(6));
+//		resOrderVO1.setPeople(Integer.valueOf(6));
 //		resOrderVO1.setTime_peri_no("TP0001");
-//		resOrderVO1.setInfo_sts(new Integer(3));
-//		resOrderVO1.setSeat_sts(new Integer(1));
+//		resOrderVO1.setInfo_sts(Integer.valueOf(3));
+//		resOrderVO1.setSeat_sts(Integer.valueOf(1));
 //		dao.update(resOrderVO1);
 //
 //		// get one seat obj

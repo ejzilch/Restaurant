@@ -45,7 +45,7 @@
 		</div>
 	</div>
 	<script src="<%=request.getContextPath()%>/back-end/js/jquery-1.12.4.js"></script>
-	<jsp:include page="/back-end/siderbar/siderbar_for_editSeat.jsp" />
+	<jsp:include page="/back-end/siderbar/siderbar_for_editSeat.jsp"/>
 	<script src="<%=request.getContextPath()%>/back-end/js/jquery-ui-1.12.1.js"></script>
 	<script src="<%=request.getContextPath()%>/back-end/js/jquery.ui.core.js"></script>
 	<script src="<%=request.getContextPath()%>/back-end/js/jquery.ui.widget.js"></script>
