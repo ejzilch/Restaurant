@@ -49,10 +49,10 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 			pstmt.setString(2, resOrderVO.getMem_no());
 			pstmt.setString(3, resOrderVO.getEmp_no());
 			pstmt.setDate(4, resOrderVO.getRes_date());
-			pstmt.setInt(5, new Integer(resOrderVO.getPeople()));
+			pstmt.setInt(5, Integer.valueOf(resOrderVO.getPeople()));
 			pstmt.setString(6, resOrderVO.getTime_peri_no());
-			pstmt.setInt(7, new Integer(resOrderVO.getInfo_sts()));
-			pstmt.setInt(8, new Integer(resOrderVO.getSeat_sts()));
+			pstmt.setInt(7, Integer.valueOf(resOrderVO.getInfo_sts()));
+			pstmt.setInt(8, Integer.valueOf(resOrderVO.getSeat_sts()));
 
 			pstmt.executeUpdate();
 
@@ -126,10 +126,10 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				pstmt.setString(2, resOrderVO.getMem_no());
 				pstmt.setString(3, resOrderVO.getEmp_no());
 				pstmt.setDate(4, resOrderVO.getRes_date());
-				pstmt.setInt(5, new Integer(resOrderVO.getPeople()));
+				pstmt.setInt(5, Integer.valueOf(resOrderVO.getPeople()));
 				pstmt.setString(6, resOrderVO.getTime_peri_no());
-				pstmt.setInt(7, new Integer(resOrderVO.getInfo_sts()));
-				pstmt.setInt(8, new Integer(resOrderVO.getSeat_sts()));
+				pstmt.setInt(7, Integer.valueOf(resOrderVO.getInfo_sts()));
+				pstmt.setInt(8, Integer.valueOf(resOrderVO.getSeat_sts()));
 				pstmt.setString(9, resOrderVO.getRes_no());
 			
 				pstmt.executeUpdate();
@@ -146,10 +146,10 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				pstmt.setString(2, resOrderVO.getMem_no());
 				pstmt.setString(3, resOrderVO.getEmp_no());
 				pstmt.setDate(4, resOrderVO.getRes_date());
-				pstmt.setInt(5, new Integer(resOrderVO.getPeople()));
+				pstmt.setInt(5, Integer.valueOf(resOrderVO.getPeople()));
 				pstmt.setString(6, resOrderVO.getTime_peri_no());
-				pstmt.setInt(7, new Integer(resOrderVO.getInfo_sts()));
-				pstmt.setInt(8, new Integer(resOrderVO.getSeat_sts()));
+				pstmt.setInt(7, Integer.valueOf(resOrderVO.getInfo_sts()));
+				pstmt.setInt(8, Integer.valueOf(resOrderVO.getSeat_sts()));
 				pstmt.setString(9, resOrderVO.getRes_no());
 				
 				pstmt.executeUpdate();
@@ -208,8 +208,8 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 			}
 
 			// Handle any SQL errors
@@ -268,8 +268,8 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 			}
 
 			// Handle any SQL errors
@@ -321,7 +321,7 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				if ("end".equals(sts)) {
-					if (new Integer(rs.getInt("SEAT_STS")) == 1 || new Integer(rs.getInt("INFO_STS")) == 3) {
+					if (Integer.valueOf(rs.getInt("SEAT_STS")) == 1 || Integer.valueOf(rs.getInt("INFO_STS")) == 3) {
 						resOrderVO = new ResOrderVO();
 
 						resOrderVO.setRes_no(rs.getString("RES_NO"));
@@ -332,13 +332,13 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 						resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 						resOrderVO.setPeople(rs.getInt("PEOPLE"));
 						resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-						resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-						resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+						resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+						resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 
 						list.add(resOrderVO); // Store the row in the list
 					}
 				} else if ("ing".equals(sts)) {
-					if (new Integer(rs.getInt("SEAT_STS")) == 0 && new Integer(rs.getInt("INFO_STS")) < 3) {
+					if (Integer.valueOf(rs.getInt("SEAT_STS")) == 0 && Integer.valueOf(rs.getInt("INFO_STS")) < 3) {
 						resOrderVO = new ResOrderVO();
 
 						resOrderVO.setRes_no(rs.getString("RES_NO"));
@@ -349,8 +349,8 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 						resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 						resOrderVO.setPeople(rs.getInt("PEOPLE"));
 						resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-						resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-						resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+						resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+						resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 
 						list.add(resOrderVO); // Store the row in the list
 					}
@@ -408,7 +408,7 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-//				if (new Integer(rs.getInt("SEAT_ISDEL")) == 0) {
+//				if (Integer.valueOf(rs.getInt("SEAT_ISDEL")) == 0) {
 				resOrderVO = new ResOrderVO();
 
 				resOrderVO.setRes_no(rs.getString("RES_NO"));
@@ -419,8 +419,8 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(java.sql.Date.valueOf(res_date));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(time_peri_no);
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 
 				list.add(resOrderVO); // Store the row in the list
 //				}
@@ -475,7 +475,7 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-//				if (new Integer(rs.getInt("SEAT_ISDEL")) == 0) {
+//				if (Integer.valueOf(rs.getInt("SEAT_ISDEL")) == 0) {
 				resOrderVO = new ResOrderVO();
 
 				resOrderVO.setRes_no(rs.getString("RES_NO"));
@@ -486,8 +486,8 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 
 				list.add(resOrderVO); // Store the row in the list
 //				}
@@ -548,8 +548,8 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 				list.add(resOrderVO); // Store the row in the list
 			}
 		} catch (SQLException se) {
@@ -608,8 +608,8 @@ public class ResOrderDAO implements ResOrderDAO_interface {
 				resOrderVO.setRes_date(rs.getDate("RES_DATE"));
 				resOrderVO.setPeople(rs.getInt("PEOPLE"));
 				resOrderVO.setTime_peri_no(rs.getString("TIME_PERI_NO"));
-				resOrderVO.setInfo_sts(new Integer(rs.getInt("INFO_STS")));
-				resOrderVO.setSeat_sts(new Integer(rs.getInt("SEAT_STS")));
+				resOrderVO.setInfo_sts(Integer.valueOf(rs.getInt("INFO_STS")));
+				resOrderVO.setSeat_sts(Integer.valueOf(rs.getInt("SEAT_STS")));
 			}
 
 			// Handle any SQL errors

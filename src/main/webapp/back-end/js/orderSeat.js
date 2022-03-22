@@ -214,13 +214,9 @@ $(document).ready(function(e) {
 });
 
 // 開局載入
-$(window).load(function init() {
-	var lock_time_peri_no = true;// 防止重複提交定義鎖
-	if (!lock_time_peri_no) {// 2.判斷該鎖是否開啟，如果是關閉的，則直接返回
-		return false;
-	}
-	lock_time_peri_no = false; // 3.進來後，立馬把鎖鎖住
-	lock_time_peri_no = true;// 如果業務執行失敗，修改鎖狀態
+$(window).load(function init(e) {
+	//進入頁面就取當天此時間之時段座位
+	getResSeat(e);
 	return false;
 });
 
