@@ -104,7 +104,7 @@ $(document).ready(function(e) {
 		return false;
 	});
 	var isChecked = $("input:checked");
-	getSeatForPopover(e, isChecked);
+	getSeatForPopover(isChecked);
 
 	$("#orderSeat").click(function(e) {
 		if (chooseSeatPeople < parseInt($("#people").val())) {
@@ -220,8 +220,7 @@ $(window).load(function init(e) {
 	return false;
 });
 
-function getSeatForPopover(e, isChecked) {
-	e.stopImmediatePropagation();
+function getSeatForPopover(isChecked) {
 	$('[data-toggle="popover"]').popover({
 		trigger: 'click',
 		delay: { "show": 100, "hide": 100 },

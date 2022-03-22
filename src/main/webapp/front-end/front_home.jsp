@@ -274,8 +274,12 @@
 					<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/member_review/select_page.jsp" class="nav-link">評價總覽</a></li>
 					<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/wait_seat/wait_seat.jsp" class="nav-link">候位狀況</a></li>
 					<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/bonus/listAllBonus.jsp" class="nav-link">紅利商品</a></li>
-					<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/shopping/mealMenu2.jsp" class="nav-link" id="meal">我要訂餐</a></li>
-					<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/res_order/orderSeat.jsp" class="nav-link" id="res">我要訂位</a></li>
+					<%	if (memVO2 != null) {%>
+							<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/shopping/mealMenu2.jsp" class="nav-link" id="meal">我要訂餐</a></li>
+							<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/res_order/orderSeat.jsp" class="nav-link" id="res">我要訂位</a></li>
+						<%} else {%>
+						<li class="nav-item"><a href="<%=request.getContextPath()%>/front-end/mem/login_mem.jsp" class="nav-link">登入</a></li>
+					<%}	%>
 				</ul>
 			</div>
 		</div>
