@@ -23,7 +23,6 @@
 	SimpleDateFormat sdFormat2 = new SimpleDateFormat("HH");
 	Date date = new Date();
 	String toDay = sdFormat.format(date);
-	System.out.print(toDay);
 	String hours = sdFormat2.format(date);
 	request.setAttribute("hours", hours);
 	request.setAttribute("toDay", toDay);
