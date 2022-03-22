@@ -2,7 +2,6 @@
 I am responsible for the reservation seat function. <br>
 ## The corresponding code is in path: <br>
 ## Back end
-訂位明細：[Restaurant/src/main/java/com/res_detail/](https://github.com/ejzilch/Restaurant/tree/main/src/main/java/com/res_detail/) <br>
 訂位相關：[Restaurant/src/main/java/com/res_order/](https://github.com/ejzilch/Restaurant/tree/main/src/main/java/com/res_order/) <br>
 座位相關：[Restaurant/src/main/java/com/seat/](https://github.com/ejzilch/Restaurant/tree/main/src/main/java/com/seat/) <br>
 桌位物件：[Restaurant/src/main/java/com/seat_obj/](https://github.com/ejzilch/Restaurant/tree/main/src/main/java/com/seat_obj/) <br>
